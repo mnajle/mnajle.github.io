@@ -2,7 +2,7 @@
 layout: post
 title:  "Small improvements all around the page"
 date:   2021-06-07 15:34:09 -0300
-categories: jekyll update
+categories: ufwc update
 ---
 
 This is a summary of all changes that were introduced to [theufwc.com][the-ufwc] during the last couple of months.
