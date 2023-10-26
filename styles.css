@@ -1,0 +1,58 @@
+body {
+    background-color: black;
+}
+
+.content {
+    max-height: 98vh;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    color: white;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 40px;
+}
+
+.left-side .header {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.greet {
+    font-size: 4rem;
+}
+
+.links {
+    display: flex;
+    column-gap: 15px;
+    justify-content: start;
+    margin: 0 15px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.links i {
+    font-size: 40px;
+}
+
+.links i:hover {
+    color: dodgerblue;
+}
+
+.arg {
+    color: #4fc3f7;
+}
+
+.photo {
+    filter: grayscale(100);
+}
