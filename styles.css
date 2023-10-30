@@ -82,6 +82,12 @@ body {
     .photo {
         margin: -25px auto;
     }
+    .links {
+        justify-content: space-around;
+    }
+    .links i {
+        font-size: 72px;
+    }
 }
 
 @media (min-width: 1024px) {
