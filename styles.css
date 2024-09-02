@@ -1,5 +1,26 @@
+:root {
+    --blue: #052F5F;
+    --white: #FFF6F6;
+    --black: #090909;
+    --bluel: #005377;
+    --red: #d72638;
+}
+
+.icon {
+    width: 24px;
+    padding: 8px;
+  background: var(--white);
+  border-radius: 15%;
+}
+
+
 body {
-    background-color: black;
+    background-color: #090909;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
 }
 
 .content {
@@ -7,80 +28,66 @@ body {
     height: 98vh;
     overflow-y: hidden;
     display: grid;
-    color: white;
+    color: var(--white);
 }
 
-.text-container {
+.left-side {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 40px;
+    padding: 8px;
 }
 
-.text-container .header {
+.left-side .header {
     font-size: 25px;
     display: flex;
     flex-direction: column;
     width: fit-content;
 }
 
-.greet {
+.name {
     font-size: 4rem;
 }
 
 .links {
     display: flex;
-    column-gap: 15px;
-    justify-content: start;
-    margin: 0 15px;
+    flex-direction: column;
 }
 
 .links a {
-    color: white;
+    display: flex;
+    align-items: center;
+    color: var(--white);
     text-decoration: none;
     font-size: 20px;
-}
-
-.links i {
-    font-size: 40px;
-}
-
-.links i:hover {
-    color: dodgerblue;
 }
 
 .arg {
     color: #4fc3f7;
 }
 
-.photo {
-    filter: grayscale(100);
+.links > .link > a > img {
+    margin-right: 8px;
 }
+
+.links > .link {
+    margin-bottom: 4px;
+}
+
 
 @media (min-width: 640px) and (max-width: 1024px) {
     .content {
         grid-template-columns: 1fr;
         margin: 32px;
     }
-    .text-container {
+    .left-side {
         grid-row: 2;
     }
-    .image-container {
+    .right-side {
         grid-row: 1;
         width: 100%;
         display: flex;
         justify-content: end;
-    }
-    .image-crop {
-        width: 500px;
-        height: 500px;
-        position: relative;
-        overflow: hidden;
-        border-radius: 50%;
-        margin: auto 0;
-    }
-    .photo {
-        margin: -25px auto;
     }
     .links {
         justify-content: space-around;
@@ -92,18 +99,17 @@ body {
 
 @media (min-width: 1024px) {
     .content {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 2fr;
     }
-    .text-container {
+    .left-side {
         grid-column: 1;
     }
-    .image-container {
+    .right-side {
         grid-column: 2;
     }
-}
-
+} 
 @media (min-width: 1590px) {
     .content {
-        margin: 0 10%;
+        /* margin: 0 32px; */
     }
-}
+} 
