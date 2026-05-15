@@ -1,46 +1,48 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Maximiliano Najle's</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="content">
-            <div class="left-side">
-                <div class="header">
-                    <div class="name">Maximiliano Najle</div>
-                    <div class="greet">Software Developer<br/>from <span class="arg">Argentina</span>
-                    </div>
-                </div>
-                <div class="links">
-                    <div class="link">
-                        <a href="mailto:maximilianonajle@gmail.com/" target="_blank">
-                            <img class="icon" src="./mail.svg"/><span>maximilianonajle@gmail.com</span>
-                        </a>
-                    </div>
-                    <div class="link">
-                        <a href="https://www.linkedin.com/in/mnajle/" target="_blank">
-                                <img class="icon" src="./linkedin.svg"/>
-                            <span>/mnajle</span>
-                        </a>
-                    </div>
-                    <div class="link">
-                        <a href="/cv.pdf" download="cv.pdf">
-                            <img class="icon" src="./download-file.svg"/><span>cv.pdf</span>
-                        </a>
-                    </div>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximiliano Najle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="left-side">
+            <div class="header">
+                <div class="name">Maximiliano Najle</div>
+                <div class="greet">Software Developer<br/>from <span class="arg">Argentina</span></div>
             </div>
-            <div class="right-side">
-                <div>
+            <div class="links">
+                <div class="link" x-data="{ copied: false }">
+                    <a href="mailto:maximilianonajle@gmail.com"
+                       @click.prevent="
+                           navigator.clipboard.writeText('maximilianonajle@gmail.com');
+                           copied = true;
+                           setTimeout(() => copied = false, 2000)
+                       ">
+                        <img class="icon" src="./mail.svg"/>
+                        <span x-text="copied ? 'Copied!' : 'maximilianonajle@gmail.com'"></span>
+                    </a>
                 </div>
-                <!-- <p></p> -->
-
+                <div class="link">
+                    <a href="https://www.linkedin.com/in/mnajle/" target="_blank">
+                        <img class="icon" src="./linkedin.svg"/>
+                        <span>/mnajle</span>
+                    </a>
+                </div>
+                <div class="link">
+                    <a href="/cv.pdf" download="cv.pdf">
+                        <img class="icon" src="./download-file.svg"/>
+                        <span>cv.pdf</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
