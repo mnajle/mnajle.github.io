@@ -25,8 +25,8 @@
 </head>
 <body>
     <div class="content">
-        <div class="left-side">
-            <div class="header">
+        <div class="main">
+<div class="header">
                 <div class="name">Maximiliano Najle</div>
                 <p class="greet">Software Developer <span class="separator">◆</span> <span class="arg">Buenos Aires, Argentina</span></p>
             </div>
@@ -79,14 +79,14 @@
             <div class="ctas">
                 <div x-data="copyButton('maximilianonajle@gmail.com')">
                     <button class="cta" @click="copy()" :class="{ 'cta--done': copied }">
-                        <span x-text="copied ? 'Copied!' : 'Send me an email'"></span>
+                        <span class="cta-icon cta-icon--mail"></span>
+                        <span x-show="!copied">Send me<br>a message</span>
+                        <span x-show="copied">Copied!</span>
                     </button>
                 </div>
                 <a class="cta" href="https://www.linkedin.com/in/mnajle/" target="_blank">
-                    <span>Connect on LinkedIn</span>
-                </a>
-                <a class="cta" href="/cv.pdf" download="cv.pdf">
-                    <span>Download CV</span>
+                    <span class="cta-icon cta-icon--linkedin"></span>
+                    <span>Connect on<br>LinkedIn</span>
                 </a>
             </div>
         </div>
