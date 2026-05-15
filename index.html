@@ -11,6 +11,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
+
     <div class="content">
         <div class="left-side">
             <div class="header">
@@ -25,19 +26,19 @@
                            copied = true;
                            setTimeout(() => copied = false, 2000)
                        ">
-                        <img class="icon" src="./mail.svg"/>
+                        <img class="icon icon--a" src="./mail.svg"/>
                         <span x-text="copied ? 'Copied!' : 'maximilianonajle@gmail.com'"></span>
                     </a>
                 </div>
                 <div class="link">
                     <a href="https://www.linkedin.com/in/mnajle/" target="_blank">
-                        <img class="icon" src="./linkedin.svg"/>
+                        <img class="icon icon--a" src="./linkedin.svg"/>
                         <span>/mnajle</span>
                     </a>
                 </div>
                 <div class="link">
                     <a href="/cv.pdf" download="cv.pdf">
-                        <img class="icon" src="./download-file.svg"/>
+                        <img class="icon icon--a" src="./download-file.svg"/>
                         <span>cv.pdf</span>
                     </a>
                 </div>
