@@ -11,37 +11,30 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-
     <div class="content">
         <div class="left-side">
             <div class="header">
                 <div class="name">Maximiliano Najle</div>
                 <p class="greet">Software Developer · <span class="arg">Buenos Aires, Argentina</span></p>
             </div>
-            <div class="links">
-                <div class="link" x-data="{ copied: false }">
-                    <a href="mailto:maximilianonajle@gmail.com"
-                       @click.prevent="
-                           navigator.clipboard.writeText('maximilianonajle@gmail.com');
-                           copied = true;
-                           setTimeout(() => copied = false, 2000)
-                       ">
-                        <img class="icon icon--a" src="./mail.svg"/>
-                        <span x-text="copied ? 'Copied!' : 'maximilianonajle@gmail.com'"></span>
-                    </a>
+            <div class="ctas">
+                <div x-data="{ copied: false }">
+                    <button class="cta"
+                        @click="
+                            navigator.clipboard.writeText('maximilianonajle@gmail.com');
+                            copied = true;
+                            setTimeout(() => copied = false, 2000)
+                        "
+                        :class="{ 'cta--done': copied }">
+                        <span x-text="copied ? 'Copied!' : 'Send me an email'"></span>
+                    </button>
                 </div>
-                <div class="link">
-                    <a href="https://www.linkedin.com/in/mnajle/" target="_blank">
-                        <img class="icon icon--a" src="./linkedin.svg"/>
-                        <span>/mnajle</span>
-                    </a>
-                </div>
-                <div class="link">
-                    <a href="/cv.pdf" download="cv.pdf">
-                        <img class="icon icon--a" src="./download-file.svg"/>
-                        <span>cv.pdf</span>
-                    </a>
-                </div>
+                <a class="cta" href="https://www.linkedin.com/in/mnajle/" target="_blank">
+                    <span>Connect on LinkedIn</span>
+                </a>
+                <a class="cta" href="/cv.pdf" download="cv.pdf">
+                    <span>Download CV</span>
+                </a>
             </div>
         </div>
     </div>
