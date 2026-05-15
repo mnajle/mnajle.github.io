@@ -1,26 +1,20 @@
 :root {
-    --blue: #052F5F;
-    --white: #FFF6F6;
-    --black: #090909;
-    --bluel: #005377;
-    --red: #d72638;
+    --text: #f7e8ed;
+    --accent: #c97fa8;
+    --muted: #9c7080;
 }
 
 .icon {
-    width: 24px;
-    padding: 8px;
-  background: var(--white);
-  border-radius: 15%;
+    width: 18px;
+    height: 18px;
+    opacity: 0.45;
+    transition: opacity 0.15s ease;
 }
 
 
 body {
-    background-color: #090909;
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+    background-color: #3a1020;
+    font-family: "Plus Jakarta Sans", sans-serif;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -28,7 +22,7 @@ body {
 }
 
 .content {
-    color: var(--white);
+    color: #1a082e;
 }
 
 .left-side {
@@ -39,39 +33,53 @@ body {
 }
 
 .left-side .header {
-    font-size: 25px;
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    gap: 0.75rem;
 }
 
 .name {
-    font-size: 4rem;
+    font-family: "Metal Mania", sans-serif;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: normal;
+    line-height: 1;
+}
+
+.greet {
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.arg {
+    color: var(--accent);
+    font-weight: 600;
 }
 
 .links {
     display: flex;
     flex-direction: column;
+    gap: 0.8rem;
 }
 
 .links a {
     display: flex;
     align-items: center;
-    color: var(--white);
+    gap: 0.65rem;
+    color: var(--text);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: fit-content;
+    transition: color 0.15s ease;
 }
 
-.arg {
-    color: #4fc3f7;
+.links a:hover {
+    color: var(--accent);
 }
 
-.links > .link > a > img {
-    margin-right: 8px;
-}
-
-.links > .link {
-    margin-bottom: 4px;
+.links a:hover .icon {
+    opacity: 0.75;
 }
 
 
