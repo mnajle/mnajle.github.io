@@ -47,9 +47,53 @@ body {
     font-weight: 400;
 }
 
+.separator {
+    font-size: 0.5em;
+    vertical-align: 0.15em;
+    margin: 0 0.4em;
+    color: var(--muted);
+}
+
 .arg {
     color: var(--accent);
     font-weight: 600;
+}
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.tech {
+    gap: 1.5rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.tech-item i {
+    font-size: 2.5rem;
+}
+
+.tech-sep {
+    width: 1px;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    align-self: center;
+}
+
+.tech-item span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
 }
 
 .ctas {

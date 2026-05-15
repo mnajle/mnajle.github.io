@@ -8,6 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('copyButton', (text, label) => ({
+                copied: false,
+                copy() {
+                    navigator.clipboard.writeText(text);
+                    this.copied = true;
+                    setTimeout(() => this.copied = false, 2000);
+                }
+            }))
+        })
+    </script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
@@ -15,17 +28,57 @@
         <div class="left-side">
             <div class="header">
                 <div class="name">Maximiliano Najle</div>
-                <p class="greet">Software Developer · <span class="arg">Buenos Aires, Argentina</span></p>
+                <p class="greet">Software Developer <span class="separator">◆</span> <span class="arg">Buenos Aires, Argentina</span></p>
             </div>
+            <div class="tech">
+                <div class="tech-item">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-javascript-plain colored"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-typescript-plain colored"></i>
+                    <span>TypeScript</span>
+                </div>
+                <div class="tech-sep"></div>
+                <div class="tech-item">
+                    <i class="devicon-nodejs-plain colored"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-react-original colored"></i>
+                    <span>React</span>
+                </div>
+                <div class="tech-sep"></div>
+                <div class="tech-item">
+                    <i class="devicon-postgresql-plain colored"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-mongodb-plain colored"></i>
+                    <span>MongoDB</span>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-couchbase-original colored"></i>
+                    <span>Couchbase</span>
+                </div>
+                <div class="tech-sep"></div>
+                <div class="tech-item">
+                    <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="devicon-docker-plain colored"></i>
+                    <span>Docker</span>
+                </div>
+            </div>
+
             <div class="ctas">
-                <div x-data="{ copied: false }">
-                    <button class="cta"
-                        @click="
-                            navigator.clipboard.writeText('maximilianonajle@gmail.com');
-                            copied = true;
-                            setTimeout(() => copied = false, 2000)
-                        "
-                        :class="{ 'cta--done': copied }">
+                <div x-data="copyButton('maximilianonajle@gmail.com')">
+                    <button class="cta" @click="copy()" :class="{ 'cta--done': copied }">
                         <span x-text="copied ? 'Copied!' : 'Send me an email'"></span>
                     </button>
                 </div>
